@@ -23,7 +23,6 @@ __license__ = "MIT License"
 def pig_latinify(word):
     #begins with vowel add yay to end of word
     vowel = ["a", "e", "i", "o", "u"]
-    word = raw_input("Let's make it piglatinfied")
     if word in
 
     return result
