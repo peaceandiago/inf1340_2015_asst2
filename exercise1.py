@@ -1,4 +1,4 @@
-`#!/usr/bin/env python
+#!/usr/bin/env python
 
 """ Assignment 2, Exercise 1, INF1340, Fall, 2015. Pig Latin
 
@@ -23,9 +23,12 @@ __license__ = "MIT License"
 def pig_latinify(word):
     #begins with vowel add yay to end of word
     vowel = ["a", "e", "i", "o", "u"]
-    if word in vowel:
-        print (word + " ")
+    first_letter = word[0]
+    if first_letter in vowel:
+        print (word + "yay")
 
-    return result
 
-#Testing Testing
+
+    return
+
+pig_latinify("is")
