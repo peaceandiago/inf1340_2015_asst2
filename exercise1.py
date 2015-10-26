@@ -20,15 +20,15 @@ __license__ = "MIT License"
    # """
    # result = ""
 
+vowel = ["a", "e", "i", "o", "u"]
+
 def pig_latinify(word):
-    #begins with vowel add yay to end of word
-    vowel = ["a", "e", "i", "o", "u"]
+    # begins with vowel add yay to end of word
+    word = word.lower()
     first_letter = word[0]
     if first_letter in vowel:
         print (word + "yay")
 
-
-
     return
 
-pig_latinify("is")
+pig_latinify("Orange")
