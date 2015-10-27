@@ -29,4 +29,5 @@ def pig_latinify(childtalk):
     #begins with consonant, remove consonant from beginning, append in end + ay
     else:
         print (childtalk[1:] + first_letter + "ay")
+
 pig_latinify("dagro")
