@@ -11,16 +11,26 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
+#substring matching - determine whether a shorter string (substring) is
+#contained within the longer string
 
 def find(input_string, substring, start, end):
     """
-    Describe your function
+#NOT FIND FUNCTION
+#Write a function that  behaves exactly like find string method
+#Write a loop for letter by letter comparison
+#not a string method, string to search is an argument
 
     :param :
     :return:
     :raises:
 
     """
+DNA = "GAATGTCCTTTCTCTAAGTCCTAAG"
+
+
+
+
     return -1
 
 
