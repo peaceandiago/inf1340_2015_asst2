@@ -27,23 +27,36 @@ def find(input_string, substring, start, end):
 
     """
 DNA = "GAATGTCCTTTCTCTAAGTCCTAAG"
+#search = DNA.find("GTCC",0, len(DNA))
+#The above is the result they want to achieve w/o the find function
+#Refer above to know what answer they want
 
+wanted_DNA = "GTC"
+if wanted_DNA in DNA:
+    index = DNA.index(wanted_DNA) #DOES THE SAME AS ABOVE
+    print(index)
+else:
+    print ("-1")
 
+#for index in range (0, len(wanted_DNA)):
+#    search = DNA["GAAT"]
+#    print(search)
 
+#if search != -1:
+#    print("String found")
+#else:
+ #  return = -1
 
-    return -1
+#def multi_find(input_string, substring, start, end):
+ #   """
+ #   Describe your function
 
+  #  :param :
+   # :return:
+    #:raises:
 
-def multi_find(input_string, substring, start, end):
-    """
-    Describe your function
+   # """
+   # result = ""
 
-    :param :
-    :return:
-    :raises:
-
-    """
-    result = ""
-
-    return result
+    #return result
 

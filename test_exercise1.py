@@ -11,11 +11,12 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-
+import pytest
+import mock
 from exercise1 import pig_latinify
 
 
-def test_basic():
+def pig_latinify_test():
     """
     Basic test cases from assignment hand out
     """
