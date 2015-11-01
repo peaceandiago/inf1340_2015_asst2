@@ -11,12 +11,11 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-import pytest
-import mock
+
 from exercise1 import pig_latinify
 
 
-def pig_latinify_test():
+def test_pig_latinify():
     """
     Basic test cases from assignment hand out
     """
@@ -24,5 +23,19 @@ def pig_latinify_test():
     assert pig_latinify("scratch") == "atchscray"
     assert pig_latinify("is") == "isyay"
     assert pig_latinify("apple") == "appleyay"
+
+    # Testing words with uppercase
+    assert pig_latinify("Almond") == "almondyay"
+    assert pig_latinify("Phone") == "onephay"
+    assert pig_latinify("wHaT") == "atwhay"
+
+
+# Test function for input error using integer
+def test_input_error():
+    try:
+        pig_latinify(22)
+    except AttributeError:
+        assert True
+
 
 
