@@ -33,6 +33,11 @@ STAFF = [["ID", "Name", "Position", "Age"],
          [1233, "Piper Chapman", "Prisoner", 31],
          [4383, "Oliver Dart", "Unknown", 23]]
 
+PROFESSORS = [["Number", "Surname", "Age"],
+            [7434, "Silva", 33],
+            [8374, "Cray", 40],
+            [9824, "Darkes", 38]]
+
 
 #####################
 # HELPER FUNCTIONS ##
@@ -58,6 +63,7 @@ def test_union():
     assert is_equal(result, union(GRADUATES, MANAGERS))
 
 
+
 def test_intersection():
     """
     Test intersection operation.
@@ -79,6 +85,14 @@ def test_difference():
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
 
-def error():
 
-    try
+
+#class MismatchedAttributeException(GRADUATES,MANAGERS):
+
+
+ #   def error(self):
+
+  #      try:
+    #        GRADUATES != STAFF
+   #     except MismatchedAttributeException:
+     #       assert True
