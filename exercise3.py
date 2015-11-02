@@ -86,8 +86,6 @@ def union(table1, table2):
 
     return union_list
 
-print(union(PROFESSORS,GRADUATES))
-
 def intersection(table1, table2):
     """
      Perform the intersection set operation on tables, table1 and table2.
@@ -108,6 +106,7 @@ def intersection(table1, table2):
                 intersection_list.append(rows1)
 
     return intersection_list
+print(intersection(PROFESSORS,MANAGERS))
 
 
 def difference(table1, table2):

@@ -80,7 +80,7 @@ def test_intersection():
               [7432, "O'Malley", 39],
               [9824, "Darkes", 38]]
 
-    assert is_equal(result, intersection(GRADUATES, MANAGERS))
+    assert is_equal(result, intersection(PROFESSORS, MANAGERS))
 
     result = [["Number", "Surname", "Age"],
               [9824, "Darkes", 38]]
@@ -98,7 +98,11 @@ def test_difference():
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
 
+    result = [["Number", "Surname", "Age"],
+              [9297, "O'Malley", 56],
+              [7432, "O'Malley", 39]]
 
+    assert is_equal(result, difference(MANAGERS, PROFESSORS))
 
 #class MismatchedAttributeException(GRADUATES,MANAGERS):
 
