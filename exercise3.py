@@ -58,6 +58,7 @@ def union(table1, table2):
     if table1[0] != table2[0]:
         raise MismatchedAttributesException
     union_list = []
+# iterate data from table1 and table2
     for rows1 in table1:
         union_list.append(rows1)
     for rows2 in table2:
@@ -87,7 +88,6 @@ def intersection(table1, table2):
                 intersection_list.append(rows1)
 
     return intersection_list
-print(intersection(PROFESSORS,MANAGERS))
 
 
 def difference(table1, table2):
@@ -103,11 +103,14 @@ def difference(table1, table2):
     """
     if table1[0] != table2[0]:
         raise MismatchedAttributesException
+# find the intersected rows from table1 and table2
     intersected_list = intersection(table1,table2)
+# delete the first row of intersected list to avoid delete the attribute [0]
     del intersected_list[0]
     for intersected_row in intersected_list:
         for table1_row in table1:
             if table1_row == intersected_row:
+# remove duplicated attributes
                 table1.remove(table1_row)
     return table1
 
