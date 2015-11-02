@@ -62,6 +62,14 @@ def test_union():
 
     assert is_equal(result, union(GRADUATES, MANAGERS))
 
+    result = [["Number", "Surname", "Age"],
+              [7434, "Silva", 33],
+              [8374, "Cray", 40],
+              [9824, "Darkes", 38],
+              [7274, "Robinson", 37],
+              [7432, "O'Malley", 39]]
+
+    assert is_equal(result, union(PROFESSORS, GRADUATES))
 
 
 def test_intersection():
@@ -73,6 +81,11 @@ def test_intersection():
               [9824, "Darkes", 38]]
 
     assert is_equal(result, intersection(GRADUATES, MANAGERS))
+
+    result = [["Number", "Surname", "Age"],
+              [9824, "Darkes", 38]]
+
+    assert is_equal(result, intersection(PROFESSORS, MANAGERS))
 
 
 def test_difference():
