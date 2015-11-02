@@ -10,17 +10,12 @@ __author__ = 'Susan Sim'
 __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
-#"""
- #   Describe your function
 
-  #  :param : word passed on to the function
-   # :return: if begins with vowel, add "yay" to the end.
-            # if begins with consonant, move consonant(s) to end and add "ay"
-
-    #:raises: if an integer is entered, raises AttributeError
-
-   # """
-   # result = ""
+# Describe your function
+# :param : word passed on to the function
+# :return: if begins with vowel, add "yay" to the end.
+# if begins with consonant, move consonant(s) to end and add "ay"
+# :raises: if an integer is entered, raises AttributeError
 
 
 def pig_latinify(child_talk):
@@ -48,4 +43,4 @@ def pig_latinify(child_talk):
     else:
         raise AttributeError
 
-print(pig_latinify("is"))
+#pig_latinify()
