@@ -11,52 +11,49 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-#substring matching - determine whether a shorter string (substring) is
-#contained within the longer string
+# substring matching - determine whether a shorter string (substring) is
+# contained within the longer string
 
 def find(input_string, substring, start, end):
     """
-#NOT FIND FUNCTION
-#Write a function that  behaves exactly like find string method
-#Write a loop for letter by letter comparison
-#not a string method, string to search is an argument
+# NOT FIND FUNCTION
+# Write a function that  behaves exactly like find string method
+# Write a loop for letter by letter comparison
+# not a string method, string to search is an argument
 
-    :param :
-    :return:
-    :raises:
+    :param : input_string, substring, start, end
+    :return: index number
+    :raises: if string not found, return -1
 
     """
-DNA = "GAATGTCCTTTCTCTAAGTCCTAAG"
-#search = DNA.find("GTCC",0, len(DNA))
-#The above is the result they want to achieve w/o the find function
-#Refer above to know what answer they want
 
-wanted_DNA = "GTC"
-if wanted_DNA in DNA:
-    index = DNA.index(wanted_DNA) #DOES THE SAME AS ABOVE
-    print(index)
-else:
-    print ("-1")
+    # split_string stores the input string that's been sliced
+    split_string = input_string[start:end]
+    if substring in split_string:
+        index = input_string.index(substring,start,end)
+        return index
+    else:
+        return -1
 
-#for index in range (0, len(wanted_DNA)):
-#    search = DNA["GAAT"]
-#    print(search)
 
-#if search != -1:
-#    print("String found")
-#else:
- #  return = -1
+def multi_find(input_string, substring, start, end):
+    """
+# Write a function to find all substring in the input_string and add the index number in a list
 
-#def multi_find(input_string, substring, start, end):
- #   """
- #   Describe your function
+    :param : input_string, substring, start, end
+    :return: list of indext number in a list
+    :raises: if string is not found, return empty
 
-  #  :param :
-   # :return:
-    #:raises:
-
-   # """
-   # result = ""
-
-    #return result
-
+    """
+    # found_list is a blank list  and an index number is added to it each time a substring is found
+    found_list = []
+    split_string2 = input_string[start:end]
+    if substring in split_string2:
+        for index in range(start, end):
+            search = find(input_string, substring, index, end)
+            if search == index:
+                found_list.append(search)
+    if len(found_list) > 0:
+        return found_list
+    else:
+        return ""
