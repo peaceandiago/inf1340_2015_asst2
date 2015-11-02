@@ -14,12 +14,13 @@ __license__ = "MIT License"
 # substring matching - determine whether a shorter string (substring) is
 # contained within the longer string
 
+
 def find(input_string, substring, start, end):
     """
-# NOT FIND FUNCTION
-# Write a function that  behaves exactly like find string method
-# Write a loop for letter by letter comparison
-# not a string method, string to search is an argument
+NOT FIND FUNCTION
+Write a function that  behaves exactly like find string method
+Write a loop for letter by letter comparison
+not a string method, string to search is an argument
 
     :param : input_string, substring, start, end
     :return: index number
@@ -38,10 +39,10 @@ def find(input_string, substring, start, end):
 
 def multi_find(input_string, substring, start, end):
     """
-# Write a function to find all substring in the input_string and add the index number in a list
+Write a function to find all substring in the input_string and add the index number in a list
 
     :param : input_string, substring, start, end
-    :return: list of indext number in a list
+    :return: list of index number in a list
     :raises: if string is not found, return empty
 
     """
