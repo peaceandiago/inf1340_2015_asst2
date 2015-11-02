@@ -11,6 +11,7 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
+
 from exercise2 import find, multi_find
 
 
@@ -19,10 +20,18 @@ def test_find_basic():
     Test find function.
     """
     assert find("This is an ex-parrot", "parrot", 0, 20) == 14
+    assert find("Where is the cookie", "the", 3, 15) == 9
+    assert find("ABCDEFFGABCDEFF", "FF", 8, 11) == -1
 
 
 def test_multi_find_basic():
     """
     Test multi_find function.
     """
-    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
+    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == [0, 4, 8, 12]
+    assert multi_find("ABCDEFFGABCDEFF", "FF", 3, 15) == [5, 13]
+    assert multi_find("Ni! Ni! Ni! Ni!", "No", 0, 20) == ""
+
+
+
+
