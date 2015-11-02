@@ -28,6 +28,7 @@ def test_pig_latinify():
     assert pig_latinify("Almond") == "almondyay"
     assert pig_latinify("Phone") == "onephay"
     assert pig_latinify("wHaT") == "atwhay"
+    assert pig_latinify("PHarmAcy") == "armacyphay"
 
 
 # Test function for input error using integer
