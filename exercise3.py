@@ -12,26 +12,6 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-GRADUATES = [["Number", "Surname", "Age"],
-             [7274, "Robinson", 37],
-             [7432, "O'Malley", 39],
-             [9824, "Darkes", 38]]
-
-MANAGERS = [["Number", "Surname", "Age"],
-            [9297, "O'Malley", 56],
-            [7432, "O'Malley", 39],
-            [9824, "Darkes", 38]]
-
-STAFF = [["ID", "Name", "Position", "Age"],
-         [7466, "Frank Underwood", "President", 55],
-         [5323, "Jeffrey Winger", "Former Lawyer", 40],
-         [1233, "Piper Chapman", "Prisoner", 31],
-         [4383, "Oliver Dart", "Unknown", 23]]
-
-PROFESSORS = [["Number", "Surname", "Age"],
-            [7434, "Silva", 33],
-            [8374, "Cray", 40],
-            [9824, "Darkes", 38]]
 
 #####################
 # HELPER FUNCTIONS ##
@@ -85,6 +65,7 @@ def union(table1, table2):
     union_list = remove_duplicates(union_list)
 
     return union_list
+
 
 def intersection(table1, table2):
     """
