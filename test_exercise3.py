@@ -103,7 +103,7 @@ def test_difference():
 #class MismatchedAttributeException(GRADUATES,MANAGERS):
 
 
- #   def error(self):
+ # def error(self):
 
   #      try:
     #        GRADUATES != STAFF
