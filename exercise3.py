@@ -39,6 +39,10 @@ class MismatchedAttributesException(Exception):
     """
     pass
 
+###############
+# FUNCTIONS  ##
+##############
+
 
 def union(table1, table2):
     """
@@ -46,7 +50,7 @@ def union(table1, table2):
 
      :param table1: a table (a List of Lists)
      :param table2: a table (a List of Lists)
-     :return: the resulting table
+     :return: the resulting table that contains all unique rows that appear in either table
      :raises: MismatchedAttributesException:
          if tables t1 and t2 don't have the same attributes
     """
@@ -65,9 +69,17 @@ def union(table1, table2):
 
 def intersection(table1, table2):
     """
-    Describe your function
+     Perform the intersection set operation on tables, table1 and table2.
+
+     :param table1: a table (a List of Lists)
+     :param table2: a table (a List of Lists)
+     :return: the resulting table that contains all unique rows that appear in both table
+     :raises: MismatchedAttributesException:
+         if tables t1 and t2 don't have the same attributes
 
     """
+    if table1[0] != table2[0]:
+        raise MismatchedAttributesException
     intersection_list = []
     for rows1 in table1:
         for rows2 in table2:
@@ -79,19 +91,23 @@ def intersection(table1, table2):
 
 def difference(table1, table2):
     """
-    Describe your function
+     Perform the difference set operation on tables, table1 and table2.
+
+     :param table1: a table (a List of Lists)
+     :param table2: a table (a List of Lists)
+     :return: the resulting table that contains all unique rows that appear in table1 only, not table2
+     :raises: MismatchedAttributesException:
+         if tables t1 and t2 don't have the same attributes
 
     """
     if table1[0] != table2[0]:
         raise MismatchedAttributesException
-    else:
-        del table2[0]
     intersected_list = intersection(table1,table2)
+    del intersected_list[0]
     for intersected_row in intersected_list:
         for table1_row in table1:
             if table1_row == intersected_row:
                 table1.remove(table1_row)
-
     return table1
 
 
