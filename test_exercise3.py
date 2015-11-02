@@ -27,6 +27,12 @@ MANAGERS = [["Number", "Surname", "Age"],
             [7432, "O'Malley", 39],
             [9824, "Darkes", 38]]
 
+STAFF = [["ID", "Name", "Position", "Age"],
+         [7466, "Frank Underwood", "President", 55],
+         [5323, "Jeffrey Winger", "Former Lawyer", 40],
+         [1233, "Piper Chapman", "Prisoner", 31],
+         [4383, "Oliver Dart", "Unknown", 23]]
+
 
 #####################
 # HELPER FUNCTIONS ##
@@ -72,3 +78,7 @@ def test_difference():
               [7274, "Robinson", 37]]
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
+
+def error():
+
+    try
