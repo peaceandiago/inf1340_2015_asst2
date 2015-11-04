@@ -75,6 +75,8 @@ def test_union():
         is_equal(result, difference(GRADUATES, STAFF))
     except MismatchedAttributesException:
         assert True
+    else:
+        assert False
 
 
 def test_intersection():
@@ -96,7 +98,8 @@ def test_intersection():
         is_equal(result, difference(GRADUATES, STAFF))
     except MismatchedAttributesException:
         assert True
-
+    else:
+        assert False
 
 def test_difference():
     """
@@ -119,3 +122,5 @@ def test_difference():
         is_equal(result, difference(GRADUATES, STAFF))
     except MismatchedAttributesException:
         assert True
+    else:
+        assert False
