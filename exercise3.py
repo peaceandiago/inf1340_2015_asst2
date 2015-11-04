@@ -43,6 +43,9 @@ class MismatchedAttributesException(Exception):
 # FUNCTIONS  ##
 ##############
 
+#Create a function to define MismatchAttributeException
+
+
 
 def union(table1, table2):
     """
@@ -57,6 +60,7 @@ def union(table1, table2):
 
     if table1[0] != table2[0]:
         raise MismatchedAttributesException
+        return "Schemas do not match" #ends function when data does not match
     union_list = []
 # iterate data from table1 and table2
     for rows1 in table1:
@@ -81,6 +85,7 @@ def intersection(table1, table2):
     """
     if table1[0] != table2[0]:
         raise MismatchedAttributesException
+        return "Schemas do not match"
     intersection_list = []
     for rows1 in table1:
         for rows2 in table2:
@@ -103,6 +108,7 @@ def difference(table1, table2):
     """
     if table1[0] != table2[0]:
         raise MismatchedAttributesException
+        return "Schemas do not match"
 # find the intersected rows from table1 and table2
     intersected_list = intersection(table1,table2)
 # delete the first row of intersected list to avoid delete the attribute [0]

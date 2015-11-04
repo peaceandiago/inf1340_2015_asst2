@@ -11,7 +11,7 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-from exercise3 import union, intersection, difference
+from exercise3 import union, intersection, difference, MismatchedAttributesException
 
 
 ###########
@@ -34,9 +34,9 @@ STAFF = [["ID", "Name", "Position", "Age"],
          [4383, "Oliver Dart", "Unknown", 23]]
 
 PROFESSORS = [["Number", "Surname", "Age"],
-            [7434, "Silva", 33],
-            [8374, "Cray", 40],
-            [9824, "Darkes", 38]]
+              [7434, "Silva", 33],
+              [8374, "Cray", 40],
+              [9824, "Darkes", 38]]
 
 
 #####################
@@ -71,6 +71,11 @@ def test_union():
 
     assert is_equal(result, union(PROFESSORS, GRADUATES))
 
+    try:
+        is_equal(result, difference(GRADUATES, STAFF))
+    except MismatchedAttributesException:
+        assert True
+
 
 def test_intersection():
     """
@@ -87,6 +92,11 @@ def test_intersection():
 
     assert is_equal(result, intersection(PROFESSORS, MANAGERS))
 
+    try:
+        is_equal(result, difference(GRADUATES, STAFF))
+    except MismatchedAttributesException:
+        assert True
+
 
 def test_difference():
     """
@@ -98,18 +108,14 @@ def test_difference():
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
 
+
     result = [["Number", "Surname", "Age"],
               [9297, "O'Malley", 56],
               [7432, "O'Malley", 39]]
 
     assert is_equal(result, difference(MANAGERS, PROFESSORS))
 
-#class MismatchedAttributeException(GRADUATES,MANAGERS):
-
-
- # def error(self):
-
-  #      try:
-    #        GRADUATES != STAFF
-   #     except MismatchedAttributeException:
-     #       assert True
+    try:
+        is_equal(result, difference(GRADUATES, STAFF))
+    except MismatchedAttributesException:
+        assert True
