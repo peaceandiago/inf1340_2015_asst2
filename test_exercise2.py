@@ -22,7 +22,12 @@ def test_find_basic():
     assert find("This is an ex-parrot", "parrot", 0, 20) == 14
     assert find("Where is the cookie", "the", 3, 15) == 9
     assert find("ABCDEFFGABCDEFF", "FF", 8, 11) == -1
-
+    try:
+        find(239239081, "integers", 0, 20)
+    except TypeError:
+        assert True
+    else:
+        assert False
 
 def test_multi_find_basic():
     """
@@ -32,6 +37,9 @@ def test_multi_find_basic():
     assert multi_find("ABCDEFFGABCDEFF", "FF", 3, 15) == [5, 13]
     assert multi_find("Ni! Ni! Ni! Ni!", "No", 0, 20) == ""
 
-
-
-
+    try:
+        multi_find(12382938293, "asldasd", 0, 15)
+    except TypeError:
+        assert True
+    else:
+        assert False

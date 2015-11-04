@@ -37,6 +37,9 @@ def test_input_error():
         pig_latinify(22)
     except AttributeError:
         assert True
+    else:
+        assert False
+
 
 
 
