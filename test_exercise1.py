@@ -31,7 +31,7 @@ def test_pig_latinify():
     assert pig_latinify("PHarmAcy") == "armacyphay"
 
 
-# Test function for input error using integer
+# Test function for input error using integer and unassigned variables
 def test_input_error():
     try:
         pig_latinify(22)
@@ -39,6 +39,14 @@ def test_input_error():
         assert True
     else:
         assert False
+
+    try:
+        pig_latinify(dksad)
+    except NameError:
+        assert True
+    else:
+        assert False
+
 
 
 

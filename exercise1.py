@@ -41,3 +41,4 @@ def pig_latinify(child_talk):
     # if entering a non-string, raise AttributeError
     else:
         raise AttributeError
+
