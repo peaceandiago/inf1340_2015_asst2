@@ -19,7 +19,6 @@ __license__ = "MIT License"
 
 
 def pig_latinify(child_talk):
-
     # convert string to lowercase
     child_talk = child_talk.lower()
 
@@ -42,5 +41,3 @@ def pig_latinify(child_talk):
     # if entering a non-string, raise AttributeError
     else:
         raise AttributeError
-
-#pig_latinify()
