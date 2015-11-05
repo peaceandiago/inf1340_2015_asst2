@@ -13,18 +13,6 @@ __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
 
-
-MANAGERS = [["Number", "Surname", "Age"],
-            [9297, "O'Malley", 56],
-            [7432, "O'Malley", 39],
-            [9824, "Darkes", 38]]
-
-STAFF = [["ID", "Name", "Position", "Age"],
-         [7466, "Frank Underwood", "President", 55],
-         [5323, "Jeffrey Winger", "Former Lawyer", 40],
-         [1233, "Piper Chapman", "Prisoner", 31],
-         [4383, "Oliver Dart", "Unknown", 23]]
-
 #####################
 # HELPER FUNCTIONS ##
 #####################
@@ -100,6 +88,7 @@ def intersection(table1, table2):
         for rows2 in table2:
             if rows1 == rows2:
                 intersection_list.append(rows1)
+    intersection_list = remove_duplicates(intersection_list)
 
     return intersection_list
 
@@ -126,6 +115,8 @@ def difference(table1, table2):
             if table1_row == intersected_row:
 # remove duplicated attributes
                 table1.remove(table1_row)
+    table1 = remove_duplicates(table1)
     return table1
+
 
 

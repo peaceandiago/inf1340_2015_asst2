@@ -31,6 +31,7 @@ STAFF = [["ID", "Name", "Position", "Age"],
          [7466, "Frank Underwood", "President", 55],
          [5323, "Jeffrey Winger", "Former Lawyer", 40],
          [1233, "Piper Chapman", "Prisoner", 31],
+         [1233, "Piper Chapman", "Prisoner", 31],
          [4383, "Oliver Dart", "Unknown", 23]]
 
 PROFESSORS = [["Number", "Surname", "Age"],
@@ -60,8 +61,9 @@ def test_union():
               [7432, "O'Malley", 39],
               [9824, "Darkes", 38]]
 
-    assert is_equal(result, union(GRADUATES, MANAGERS))
+    assert result == union(MANAGERS, GRADUATES)
 
+def test2_union():
     result = [["Number", "Surname", "Age"],
               [7434, "Silva", 33],
               [8374, "Cray", 40],
@@ -69,10 +71,19 @@ def test_union():
               [7274, "Robinson", 37],
               [7432, "O'Malley", 39]]
 
-    assert is_equal(result, union(PROFESSORS, GRADUATES))
+    assert result == union(PROFESSORS, GRADUATES)
+
+def test3_union():
+    result = [['Number', 'Surname', 'Age'],
+              [7274, 'Robinson', 37],
+              [7432, "O'Malley", 39],
+              [9824, 'Darkes', 38],
+              [9297, "O'Malley", 56]]
+
+    assert result == union(GRADUATES,MANAGERS)
 
     try:
-        is_equal(result, difference(GRADUATES, STAFF))
+        assert result == difference(GRADUATES, STAFF)
     except MismatchedAttributesException:
         assert True
     else:
@@ -87,15 +98,15 @@ def test_intersection():
               [7432, "O'Malley", 39],
               [9824, "Darkes", 38]]
 
-    assert is_equal(result, intersection(PROFESSORS, MANAGERS))
+    assert result == intersection(PROFESSORS, MANAGERS)
 
     result = [["Number", "Surname", "Age"],
               [9824, "Darkes", 38]]
 
-    assert is_equal(result, intersection(PROFESSORS, MANAGERS))
+    assert result == intersection(PROFESSORS, MANAGERS)
 
     try:
-        is_equal(result, difference(GRADUATES, STAFF))
+        assert result == difference(GRADUATES, STAFF)
     except MismatchedAttributesException:
         assert True
     else:
@@ -109,17 +120,17 @@ def test_difference():
     result = [["Number", "Surname", "Age"],
               [7274, "Robinson", 37]]
 
-    assert is_equal(result, difference(GRADUATES, MANAGERS))
+    assert result == difference(GRADUATES, MANAGERS)
 
 
     result = [["Number", "Surname", "Age"],
               [9297, "O'Malley", 56],
               [7432, "O'Malley", 39]]
 
-    assert is_equal(result, difference(MANAGERS, PROFESSORS))
+    assert result == difference(MANAGERS, PROFESSORS)
 
     try:
-        is_equal(result, difference(GRADUATES, STAFF))
+        assert result == difference(GRADUATES, STAFF)
     except MismatchedAttributesException:
         assert True
     else:
