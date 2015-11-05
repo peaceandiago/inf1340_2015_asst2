@@ -39,11 +39,12 @@ class MismatchedAttributesException(Exception):
     """
     pass
 
+
 ###############
 # FUNCTIONS  ##
 ##############
 
-#Create a function to define MismatchAttributeException
+# Create a function to define MismatchAttributeException
 
 
 
@@ -61,7 +62,7 @@ def union(table1, table2):
     if table1[0] != table2[0]:
         raise MismatchedAttributesException
     union_list = []
-# iterate data from table1 and table2
+    # iterate data from table1 and table2
     for rows1 in table1:
         union_list.append(rows1)
     for rows2 in table2:
@@ -69,6 +70,7 @@ def union(table1, table2):
     union_list = remove_duplicates(union_list)
 
     return union_list
+
 
 def intersection(table1, table2):
     """
@@ -106,14 +108,14 @@ def difference(table1, table2):
     """
     if table1[0] != table2[0]:
         raise MismatchedAttributesException
-# find the intersected rows from table1 and table2
-    intersected_list = intersection(table1,table2)
-# delete the first row of intersected list to avoid delete the attribute [0]
+    # find the intersected rows from table1 and table2
+    intersected_list = intersection(table1, table2)
+    # delete the first row of intersected list to avoid delete the attribute [0]
     del intersected_list[0]
     for intersected_row in intersected_list:
         for table1_row in table1:
             if table1_row == intersected_row:
-# remove duplicated attributes
+                # remove duplicated attributes
                 table1.remove(table1_row)
     table1 = remove_duplicates(table1)
     return table1
