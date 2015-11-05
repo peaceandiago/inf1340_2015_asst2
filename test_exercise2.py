@@ -33,7 +33,7 @@ def test_multi_find_basic():
     """
     Test multi_find function.
     """
-    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == [0, 4, 8, 12]
+    assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 15) == [0, 4, 8, 12]
     assert multi_find("ABCDEFFGABCDEFF", "FF", 3, 15) == [5, 13]
     assert multi_find("Ni! Ni! Ni! Ni!", "No", 0, 20) == ""
 
