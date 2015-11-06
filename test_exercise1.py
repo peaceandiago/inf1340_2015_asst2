@@ -30,6 +30,10 @@ def test_pig_latinify():
     assert pig_latinify("wHaT") == "atwhay"
     assert pig_latinify("PHarmAcy") == "armacyphay"
 
+    # Testing words with no vowel
+    assert pig_latinify("why") == "whyay"
+    assert pig_latinify("try") == "tryay"
+
 
 # Test function for input error using integer and unassigned variables
 def test_input_error():
@@ -37,15 +41,11 @@ def test_input_error():
         pig_latinify(22)
     except AttributeError:
         assert True
-    else:
-        assert False
 
     try:
         pig_latinify(dksad)
     except NameError:
         assert True
-    else:
-        assert False
 
 
 
