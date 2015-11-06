@@ -27,7 +27,6 @@ def pig_latinify(word):
     # convert input to string
     word = str(word)
 
-    index = 0
     letter_vowel_index = -1
 
     # searches for vowel
@@ -55,4 +54,4 @@ def pig_latinify(word):
         raise AttributeError
 
 
-#print(pig_latinify(22))
+print(pig_latinify("hhpay"))
