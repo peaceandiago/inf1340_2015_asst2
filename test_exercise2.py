@@ -26,8 +26,7 @@ def test_find_basic():
         find(239239081, "integers", 0, 20)
     except TypeError:
         assert True
-    else:
-        assert False
+
 
 def test_multi_find_basic():
     """
@@ -41,5 +40,3 @@ def test_multi_find_basic():
         multi_find(12382938293, "asldasd", 0, 15)
     except TypeError:
         assert True
-    else:
-        assert False
