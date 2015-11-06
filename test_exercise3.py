@@ -44,7 +44,7 @@ PROFESSORS = [["Number", "Surname", "Age"],
 # HELPER FUNCTIONS ##
 #####################
 def is_equal(t1, t2):
-    return set(map(tuple, t1)) == set(map(tuple, t2))
+    return sorted(t1) == sorted(t2)
 
 
 ###################
@@ -56,12 +56,13 @@ def test_union():
     """
 
     result = [["Number", "Surname", "Age"],
-              [7274, "Robinson", 37],
               [9297, "O'Malley", 56],
               [7432, "O'Malley", 39],
-              [9824, "Darkes", 38]]
+              [9824, "Darkes", 38],
+              [7274, "Robinson", 37]]
 
     assert result == union(MANAGERS, GRADUATES)
+
 
 def test2_union():
     result = [["Number", "Surname", "Age"],
@@ -72,6 +73,7 @@ def test2_union():
               [7432, "O'Malley", 39]]
 
     assert result == union(PROFESSORS, GRADUATES)
+
 
 def test3_union():
     result = [['Number', 'Surname', 'Age'],
@@ -98,8 +100,10 @@ def test_intersection():
               [7432, "O'Malley", 39],
               [9824, "Darkes", 38]]
 
-    assert result == intersection(PROFESSORS, MANAGERS)
+    assert result == intersection(GRADUATES, MANAGERS)
 
+
+def test2_intersection():
     result = [["Number", "Surname", "Age"],
               [9824, "Darkes", 38]]
 
@@ -112,6 +116,7 @@ def test_intersection():
     else:
         assert False
 
+
 def test_difference():
     """
     Test difference operation.
@@ -121,7 +126,6 @@ def test_difference():
               [7274, "Robinson", 37]]
 
     assert result == difference(GRADUATES, MANAGERS)
-
 
     result = [["Number", "Surname", "Age"],
               [9297, "O'Malley", 56],
