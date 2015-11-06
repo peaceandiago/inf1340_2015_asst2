@@ -47,11 +47,11 @@ def pig_latinify(word):
 
     # if word does not have vowels, return original word + ay
     elif first_letter not in vowel and letter_vowel_index != -1 and letter_vowel_index != 0:
-        return word[letter_vowel_index:] + word[0:letter_vowel_index] + "ay"
+        return word[letter_vowel_index:] + word[:letter_vowel_index] + "ay"
 
     # if entering a non-string, raise AttributeError
     else:
         raise AttributeError
 
 
-print(pig_latinify("hhpay"))
+#print(pig_latinify("whomp"))
