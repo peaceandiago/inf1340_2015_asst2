@@ -39,13 +39,9 @@ class MismatchedAttributesException(Exception):
     """
     pass
 
-
 ###############
 # FUNCTIONS  ##
 ##############
-
-# Create a function to define MismatchAttributeException
-
 
 
 def union(table1, table2):
@@ -119,6 +115,3 @@ def difference(table1, table2):
                 table1.remove(table1_row)
     table1 = remove_duplicates(table1)
     return table1
-
-
-
