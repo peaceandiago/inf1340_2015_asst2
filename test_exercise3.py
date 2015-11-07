@@ -39,6 +39,8 @@ PROFESSORS = [["Number", "Surname", "Age"],
               [8374, "Cray", 40],
               [9824, "Darkes", 38]]
 
+BLANK = [["Number", "Surname", "Age"]]
+
 
 #####################
 # HELPER FUNCTIONS ##
@@ -63,8 +65,6 @@ def test_union():
 
     assert result == union(MANAGERS, GRADUATES)
 
-
-def test2_union():
     result = [["Number", "Surname", "Age"],
               [7434, "Silva", 33],
               [8374, "Cray", 40],
@@ -74,8 +74,6 @@ def test2_union():
 
     assert result == union(PROFESSORS, GRADUATES)
 
-
-def test3_union():
     result = [['Number', 'Surname', 'Age'],
               [7274, 'Robinson', 37],
               [7432, "O'Malley", 39],
@@ -85,7 +83,7 @@ def test3_union():
     assert result == union(GRADUATES,MANAGERS)
 
     try:
-        assert result == difference(GRADUATES, STAFF)
+        assert result == union(GRADUATES, STAFF)
     except MismatchedAttributesException:
         assert True
 
@@ -100,15 +98,15 @@ def test_intersection():
 
     assert result == intersection(GRADUATES, MANAGERS)
 
-
-def test2_intersection():
     result = [["Number", "Surname", "Age"],
               [9824, "Darkes", 38]]
 
     assert result == intersection(PROFESSORS, MANAGERS)
 
+    assert intersection(GRADUATES, BLANK) is None
+
     try:
-        assert result == difference(GRADUATES, STAFF)
+        assert result == intersection(GRADUATES, STAFF)
     except MismatchedAttributesException:
         assert True
 
@@ -128,6 +126,8 @@ def test_difference():
               [7432, "O'Malley", 39]]
 
     assert result == difference(MANAGERS, PROFESSORS)
+
+    assert difference(BLANK, GRADUATES) is None
 
     try:
         assert result == difference(GRADUATES, STAFF)
